@@ -1,0 +1,37 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.1.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id 'io.freefair.lombok' version '5.0.0-rc6' apply false
+}
+
+group 'com.cas'
+version '0.0.1-SNAPSHOT'
+
+repositories {
+    maven { url 'https://maven.aliyun.com/repository/public/' }
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.springframework.boot:spring-boot-configuration-processor'
+
+    implementation 'com.alibaba:fastjson:1.2.61'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'org.apache.commons:commons-pool2'
+    implementation 'mysql:mysql-connector-java:8.0.13'
+    implementation 'com.baomidou:mybatis-plus-boot-starter:3.4.3'
+    implementation 'commons-beanutils:commons-beanutils:1.9.4'
+    implementation 'org.aspectj:aspectjweaver'
+
+    //hutool
+    implementation("cn.hutool:hutool-all:5.7.7")
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}
