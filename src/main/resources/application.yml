@@ -19,6 +19,24 @@ spring:
         time-between-eviction-runs: 10s
   jackson:
     default-property-inclusion: non_null # JSON处理时忽略非空字段
+  rabbitmq:
+    host: 127.0.0.1 # 127.0.0.1  用户名
+    port: 5672 # port
+    username: guest # guest 用户名
+    password: guest # guest 密码
+    virtual-host: / # 指定连接到broker的Virtual host.
+    publisher-confirm-type: correlated # 发布确认属性配置
+    publisher-returns: true # 确认消息已发送到队列(Queue) 开启发送失败退回
+    dynamic: true # 是否创建AmqpAdmin bean. 默认为: true)
+    addresses: # 指定client连接到的server的地址，多个以逗号分隔.
+    connection-timeout: 0 # 连接超时时间，单位毫秒，0表示永不超时
+    listener:
+      simple:
+        retry:
+          enabled: true # 开启消费者进行重试
+          max-attempts: 5 # 最大重试次数
+          initial-interval: 3000 # 重试时间间隔
+
 mybatis-plus:
   type-aliases-package: com.cas.entity # 别名扫描包
 logging:

@@ -66,11 +66,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Override
     public Result login(LoginFormDTO loginForm, HttpSession session) {
         // 1、校验验证码
-        Object cacheCode = session.getAttribute("code");
-        String code = loginForm.getCode();
-        if (cacheCode == null || !cacheCode.toString().equals(code)) {
-            return Result.fail("验证码不存在");
-        }
+//        Object cacheCode = session.getAttribute("code");
+//        String code = loginForm.getCode();
+//        if (cacheCode == null || !cacheCode.toString().equals(code)) {
+//            return Result.fail("验证码不存在");
+//        }
 
         // 2、查询用户是否存在
         String phone = loginForm.getPhone();

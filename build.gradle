@@ -25,6 +25,9 @@ dependencies {
     implementation 'com.baomidou:mybatis-plus-boot-starter:3.4.3'
     implementation 'commons-beanutils:commons-beanutils:1.9.4'
     implementation 'org.aspectj:aspectjweaver'
+    implementation 'org.redisson:redisson:3.13.6'
+    // rabbitmq
+    implementation 'org.springframework.boot:spring-boot-starter-amqp'
 
     //hutool
     implementation("cn.hutool:hutool-all:5.7.7")
