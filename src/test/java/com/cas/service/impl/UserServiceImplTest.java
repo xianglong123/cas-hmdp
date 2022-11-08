@@ -40,6 +40,10 @@ public class UserServiceImplTest extends BaseApplication {
         }
     }
 
+    /**
+     * 登录1000个用户，并将token写入文件
+     * @throws IOException
+     */
     @Test
     public void login() throws IOException {
         File file = new File("/Users/xianglong/IdeaProjects/cas-hmdp/src/main/resources/token.txt");

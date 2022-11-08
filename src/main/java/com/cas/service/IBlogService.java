@@ -1,6 +1,7 @@
 package com.cas.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.cas.dto.Result;
 import com.cas.entity.Blog;
 
 /**
@@ -13,4 +14,10 @@ import com.cas.entity.Blog;
  */
 public interface IBlogService extends IService<Blog> {
 
+    Result queryHotBlog(Integer current);
+
+
+    Result queryBlogById(Long id);
+
+    Result likeBlog(Long id);
 }
